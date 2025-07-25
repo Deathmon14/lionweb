@@ -2,7 +2,7 @@ import React from 'react';
 import { Globe, Heart, Award } from 'lucide-react';
 import presidentPhoto from '../assets/president-photo.jpg';
 import raviNaiduPhoto from '../assets/ravi-naidu-photo.jpg'; // Assuming this is the path to the image
-
+import leelaPhoto from '../assets/LEELA-KRISHNA.jpeg'
 const AboutPage = () => {
   const leadership = [
     {
@@ -16,7 +16,14 @@ const AboutPage = () => {
       position: 'District Chairperson – Social Welfare',
       image: raviNaiduPhoto,
       term: '2025-2026'
+    },
+    {
+      name: 'Lion R. Leela Krishna pmjf',
+      position: 'District Chairperson',
+      image: leelaPhoto,
+      term: '2025-2026'
     }
+
   ];
 
   const achievements = [
@@ -167,7 +174,7 @@ const AboutPage = () => {
               to community service and fellowship.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center">
             {leadership.map((leader, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
                 <div className="relative mb-6">
