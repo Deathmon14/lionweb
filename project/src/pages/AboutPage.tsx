@@ -1,25 +1,21 @@
 import React from 'react';
-import { Users, Award, Globe, Heart } from 'lucide-react';
+import { Globe, Heart, Award } from 'lucide-react';
+import presidentPhoto from '../assets/president-photo.jpg';
+import raviNaiduPhoto from '../assets/ravi-naidu-photo.jpg'; // Assuming this is the path to the image
 
 const AboutPage = () => {
   const leadership = [
     {
-      name: 'Lion Rajesh Kumar',
+      name: 'Lion President Dr. Kaiwara Srinivasa',
       position: 'President',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      term: '2024-2025'
+      image: presidentPhoto,
+      term: '2025-2026'
     },
     {
-      name: 'Lion Priya Sharma',
-      position: 'Secretary',
-      image: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      term: '2024-2025'
-    },
-    {
-      name: 'Lion Amit Singh',
-      position: 'Treasurer',
-      image: 'https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop',
-      term: '2024-2025'
+      name: 'Lion Dr. B.M. Ravi Naidu, PMJF',
+      position: 'District Chairperson – Social Welfare',
+      image: raviNaiduPhoto,
+      term: '2025-2026'
     }
   ];
 
@@ -54,7 +50,7 @@ const AboutPage = () => {
           <h1 className="font-serif text-4xl font-bold text-[#0055A4] mb-6">About Our Club</h1>
           <div className="bg-[#FDB913] w-20 h-1 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Lions Club Bangalore Doddabommasandra is a beacon of hope and service in our community, 
+            Lions Club Bangalore Doddabommasandra is a beacon of hope and service in our community,
             dedicated to creating positive change through fellowship, leadership, and humanitarian action.
           </p>
         </div>
@@ -72,8 +68,8 @@ const AboutPage = () => {
                   </div>
                 </div>
                 <p className="text-blue-100 leading-relaxed mb-6">
-                  Since 1917, Lions Clubs International has been empowering volunteers to serve their communities, 
-                  meet humanitarian needs, encourage peace, and promote international understanding. With over 
+                  Since 1917, Lions Clubs International has been empowering volunteers to serve their communities,
+                  meet humanitarian needs, encourage peace, and promote international understanding. With over
                   1.4 million members worldwide, we are united by our motto: "We Serve."
                 </p>
                 <div className="grid grid-cols-2 gap-4">
@@ -105,13 +101,13 @@ const AboutPage = () => {
               <h2 className="font-serif text-3xl font-bold text-[#0055A4] mb-4">Our Chapter's Journey</h2>
               <div className="bg-[#FDB913] w-16 h-1 mb-6"></div>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Founded in 2015, Lions Club Bangalore Doddabommasandra emerged from a shared vision of 
-                dedicated community members who believed in the power of collective service. Our club was 
+                Founded in 2015, Lions Club Bangalore Doddabommasandra emerged from a shared vision of
+                dedicated community members who believed in the power of collective service. Our club was
                 chartered with the mission to address local needs while contributing to global Lions initiatives.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Over the years, we have grown from a small group of passionate individuals to a robust 
-                organization of 45+ active members, each committed to making a meaningful difference in 
+                Over the years, we have grown from a small group of passionate individuals to a robust
+                organization of 45+ active members, each committed to making a meaningful difference in
                 the Doddabommasandra area and beyond.
               </p>
               <div className="grid grid-cols-2 gap-4">
@@ -141,7 +137,7 @@ const AboutPage = () => {
             <h2 className="font-serif text-3xl font-bold text-[#0055A4] mb-4">Our Achievements</h2>
             <div className="bg-[#FDB913] w-16 h-1 mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our commitment to excellence in service has been recognized through various awards and the 
+              Our commitment to excellence in service has been recognized through various awards and the
               tangible impact we've made in our community.
             </p>
           </div>
@@ -167,11 +163,11 @@ const AboutPage = () => {
             <h2 className="font-serif text-3xl font-bold text-[#0055A4] mb-4">Our Leadership Team</h2>
             <div className="bg-[#FDB913] w-16 h-1 mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Meet the dedicated leaders who guide our club's vision and ensure our continued commitment 
+              Meet the dedicated leaders who guide our club's vision and ensure our continued commitment
               to community service and fellowship.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center">
             {leadership.map((leader, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
                 <div className="relative mb-6">

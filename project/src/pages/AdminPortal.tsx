@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Eye, EyeOff, Plus, Calendar, FileImage, MessageSquare, CheckCircle, X } from 'lucide-react';
+import { Eye, EyeOff, Plus, FileImage, MessageSquare, CheckCircle, X } from 'lucide-react';
 import { useEvents } from '../context/EventContext';
 import { useAnnouncements } from '../context/AnnouncementContext';
 
@@ -71,10 +71,10 @@ const AdminPortal = () => {
     const newAnnouncement = {
       title: announcementForm.title,
       content: announcementForm.content,
-      date: new Date().toLocaleDateString('en-US', { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
+      date: new Date().toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
       })
     };
 
@@ -84,13 +84,21 @@ const AdminPortal = () => {
     setTimeout(() => setSubmitStatus(null), 3000);
   };
 
-  const handleImageAdd = () => {
-    const imageUrl = prompt('Enter image URL (Pexels or other source):');
-    if (imageUrl) {
-      setEventForm(prev => ({
-        ...prev,
-        images: [...prev.images, imageUrl]
-      }));
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const files = Array.from(e.target.files);
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          if (typeof reader.result === 'string') {
+            setEventForm(prev => ({
+              ...prev,
+              images: [...prev.images, reader.result as string]
+            }));
+          }
+        };
+        reader.readAsDataURL(file);
+      });
     }
   };
 
@@ -272,15 +280,22 @@ const AdminPortal = () => {
                     Event Images
                   </label>
                   <div className="space-y-4">
-                    <button
-                      type="button"
-                      onClick={handleImageAdd}
-                      className="flex items-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                    <input
+                      type="file"
+                      id="imageUpload"
+                      multiple
+                      accept="image/*"
+                      onChange={handleImageChange}
+                      className="hidden"
+                    />
+                    <label
+                      htmlFor="imageUpload"
+                      className="cursor-pointer inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors duration-200"
                     >
                       <Plus className="h-5 w-5 mr-2" />
-                      Add Image URL
-                    </button>
-                    
+                      Upload Images
+                    </label>
+
                     {eventForm.images.length > 0 && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {eventForm.images.map((image, index) => (
@@ -301,9 +316,9 @@ const AdminPortal = () => {
                         ))}
                       </div>
                     )}
-                    
+
                     <p className="text-sm text-gray-500">
-                      Add images from Pexels or other sources. If no images are added, default images will be used.
+                      Upload images directly from your device. If no images are added, default images will be used.
                     </p>
                   </div>
                 </div>
@@ -364,9 +379,9 @@ const AdminPortal = () => {
         <div className="bg-blue-50 rounded-xl p-6">
           <h3 className="font-semibold text-[#0055A4] mb-4">Instructions</h3>
           <div className="space-y-2 text-sm text-blue-700">
-            <p>• <strong>Events:</strong> Fill in all required fields and add images by providing URLs from Pexels or other sources.</p>
+            <p>• <strong>Events:</strong> Fill in all required fields and upload images directly from your device.</p>
             <p>• <strong>Announcements:</strong> Create announcements that will appear on the homepage and announcements page.</p>
-            <p>• <strong>Images:</strong> Use high-quality images that represent your events well. Images will be automatically optimized.</p>
+            <p>• <strong>Images:</strong> Use high-quality images that represent your events well. These will be displayed as previews.</p>
             <p>• <strong>Publishing:</strong> Content is published immediately after submission and will appear on the website.</p>
           </div>
         </div>

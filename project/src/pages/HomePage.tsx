@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Users, Heart, Award } from 'lucide-react';
 import { useEvents } from '../context/EventContext';
 import { useAnnouncements } from '../context/AnnouncementContext';
+import presidentPhoto from '../assets/president-photo.jpg';
 
 const HomePage = () => {
   const { events } = useEvents();
@@ -29,7 +30,7 @@ const HomePage = () => {
               Serving Our Community with Pride
             </h1>
             <p className="text-xl lg:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Lions Club Bangalore Doddabommasandra - Where service meets fellowship, 
+              Lions Club Bangalore Doddabommasandra - Where service meets fellowship,
               and every act of kindness creates ripples of positive change.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -59,26 +60,29 @@ const HomePage = () => {
                 <h2 className="font-serif text-3xl font-bold text-[#0055A4] mb-4">President's Corner</h2>
                 <div className="bg-[#FDB913] w-16 h-1 mb-6"></div>
                 <h3 className="font-serif text-xl font-semibold text-gray-800 mb-4">
-                  "My Vision for 2024-2025: Health, Hope, and Harmony"
+                  "My Vision for 2025-2026: Health, Hope, and Harmony"
                 </h3>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Dear Fellow Lions and Community Members, as we embark on this journey together, 
-                  my vision focuses on three pillars that will strengthen our community bonds. 
-                  Through health initiatives, we'll ensure wellness reaches every corner of our neighborhood. 
-                  By fostering hope, we'll support those who need it most. And through harmony, 
-                  we'll build bridges that unite us all in service.
+                  As we embark on this meaningful journey together, my vision is anchored on three core pillars that will strengthen our community bonds:
+                  my vision focuses on three pillars that will strengthen our community bonds.
+                  Health – to ensure wellness reaches every corner of our neighborhood.
+
+                  Hope – to uplift and support those who need it most.
+
+                  Harmony – to build bridges that unite us all in service.
+                  Together, let us uphold the true spirit of Lionism — through compassion, action, and collective commitment.
                 </p>
                 <div className="flex items-center space-x-4">
                   <div>
-                    <p className="font-semibold text-[#0055A4]">Lion President Rajesh Kumar</p>
-                    <p className="text-sm text-gray-500">President 2024-2025</p>
+                    <p className="font-semibold text-[#0055A4]">Lion President Dr. Kaiwara Srinivasa</p>
+                    <p className="text-sm text-gray-500">President 2025-2026</p>
                   </div>
                 </div>
               </div>
               <div className="flex justify-center">
                 <div className="relative">
                   <img
-                    src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+                    src={presidentPhoto}
                     alt="President"
                     className="w-64 h-64 rounded-full object-cover shadow-lg"
                   />

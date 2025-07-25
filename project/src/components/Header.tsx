@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logo from '../assets/lions-logo.jpg'; // <-- Change this line to use the JPG
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,8 +24,8 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo and Club Name */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="bg-[#FDB913] p-2 rounded-full">
-              <Heart className="h-8 w-8 text-[#0055A4]" fill="currentColor" />
+            <div className="bg-white p-1 rounded-full">
+              <img src={logo} alt="Lions Club Logo" className="h-10 w-10" />
             </div>
             <div className="text-white">
               <h1 className="font-serif text-xl font-bold">Lions Club</h1>
